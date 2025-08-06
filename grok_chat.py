@@ -5,11 +5,13 @@ client = Groq(
     api_key=os.environ.get('GROQ_API_KEY')
 )
 
+pergunta = input("Digite a sua pergunta\n")
+
 chat = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": "Explique a importância de modelos de linguagens rapidos"
+            "content": pergunta
         }
     ],
     model="llama-3.3-70b-versatile"
